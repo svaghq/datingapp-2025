@@ -94,9 +94,4 @@ public class MessageRepository(AppDbContext context) : IMessageRepository
             .Where(x => x.ConnectionId == connectionId)
             .ExecuteDeleteAsync();
     }
-
-    public async Task<bool> SaveAllChanges()
-    {
-        return await context.SaveChangesAsync() > 0;
-    }
 }
